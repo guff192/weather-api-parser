@@ -1,5 +1,5 @@
 # weather-api-parser
-Simple parser of OpenWeatherMap API with one endpoint on API server and frontend client on Vue.js
+Simple parser of OpenWeatherMap API with one endpoint on API server (written in Golang) and frontend client (written in Vue.js)
 
 ## API endpoint
 
