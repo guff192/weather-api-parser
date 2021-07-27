@@ -5,10 +5,10 @@ Simple parser of OpenWeatherMap API with one endpoint on API server and frontend
 
 ```:8080/weather/<city_name>```
 
-here should be example screenshot of API call
+![API usage example](screenshots/Снимок%20экрана%202021-07-27%20в%2021.45.34.png)
 
 ## Frontend client
 
 ```:8000/```
 
-here should be example screenshot of client
+![Client usage example](screenshots/Снимок%20экрана%202021-07-27%20в%2021.19.52.png)
