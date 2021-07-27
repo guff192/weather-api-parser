@@ -8,6 +8,6 @@ func main() {
 	StaticServer := web.NewStaticServer()
 	go StaticServer.Run()
 
-	WeatherServer := web.NewWeatherServer()
+	WeatherServer := web.NewWeatherAPIServer()
 	WeatherServer.Run()
 }

@@ -1,7 +1,6 @@
 package web
 
 import (
-	"github.com/gorilla/mux"
 	"net/http"
 )
 
@@ -22,13 +21,17 @@ type staticServer struct {
 }
 
 func (ss *staticServer) Run() {
-	fs := http.FileServer(http.Dir("static"))
-	router := mux.NewRouter()
-	router.Handle("/static/", http.StripPrefix("/static", fs))
-	ss.server.Handler = router
-
+	fs := http.FileServer(http.Dir("static/"))
+	ss.server.Handler = cors(fs)
 	err := ss.server.ListenAndServe()
 	if err != nil {
 		panic("error running server!")
+	}
+}
+
+func cors(fs http.Handler) http.HandlerFunc {
+	return func(writer http.ResponseWriter, request *http.Request) {
+		writer.Header().Set("Access-Control-Allow-Origin", "*")
+		fs.ServeHTTP(writer, request)
 	}
 }

@@ -27,6 +27,7 @@ func HandleCurrentWeatherByCityName(w http.ResponseWriter, r *http.Request) {
 	weatherJSON, _ := json.Marshal(weather)
 
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusOK)
 	w.Write(weatherJSON)
 }
