@@ -30,12 +30,12 @@
 
 <script type="text/x-template" id="current-weather-form-template">
     <div>
-        <form action="">
+        <form @submit.prevent="onSubmit" action="">
             <h1>Узнать погоду в выбранном городе</h1>
             <label for="city_i">Введите название города:</label>
             <input id="city_i" type="text">
-            <button type="button" v-on:click="$emit('get-weather')">Узнать!</button>
         </form>
+        <button type="button" v-on:click="$emit('get-weather')">Узнать!</button>
     </div>
 </script>
 

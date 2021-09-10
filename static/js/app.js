@@ -1,9 +1,9 @@
-let form = Vue.component('current-weather-form', {
+Vue.component('current-weather-form', {
     template: '#current-weather-form-template',
     methods: {}
 })
 
-let widget = Vue.component('current-weather-widget', {
+Vue.component('current-weather-widget', {
     props: ['city', 'temp', 'feels_like', 'description'],
     template: '#current-weather-widget-template',
 })
